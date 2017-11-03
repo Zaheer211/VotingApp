@@ -8,7 +8,7 @@ const path = require('path');
 
 const app = express();
 
-mongoose.connect('mongodb://zaheer:zud313@ds151702.mlab.com:51702/mongo_online_db');
+mongoose.connect('mongodb://XXXXXXX');
 
 let port = process.env.PORT || 8080;
 
