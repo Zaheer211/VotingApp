@@ -1,0 +1,21 @@
+<nav class="navbar navbar-inverse">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <a style="font-family: 'Playball', cursive;" class="navbar-brand" routerLink=''>Voting</a>
+    </div>
+
+    <div>
+      <ul class="nav navbar-nav navbar-right">
+        <li><a routerLink=''>Home</a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<div class="jumbotron">
+  <h1 class="text-center">Below are polls by Voting</h1>
+  <h2 class="text-center">Click to See Details</h2>
+  <ul class="list-group" *ngFor="let poll of this.polls">
+    <li routerLink='/polls/{{poll._id}}' class="list-group-item">{{poll.title}}</li>
+  </ul>
+</div>

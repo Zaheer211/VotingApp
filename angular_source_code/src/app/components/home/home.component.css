@@ -1,0 +1,85 @@
+
+.list-group-item{
+  cursor: pointer; cursor: hand;
+}
+
+.navbar{
+  margin-bottom: 0;
+  padding-bottom: 0;
+  border-radius: 0;
+  background-color: #101e2d;
+}
+
+.home-brand{
+  font-family: 'Playball', cursive;
+  color: white;
+  text-align: center;
+  background-color: #4c606d;
+  margin-top: 0;
+  height: 350px;
+  width: auto;
+}
+
+.home-brand-details{
+  padding-top: 6%;
+}
+
+.home-description{
+  height: 300px;
+  width: auto;
+  background-color: #748d99;
+}
+
+@media only screen and (max-width: 668px) {
+  .home-description{
+    height: 200px;
+    width: auto;
+    background-color: #748d99;
+    font-size: 5px;
+  }
+
+  .home-description h2{
+    font-size: 20px;
+  }
+}
+
+.home-polls{
+  height: 450px;
+  width: auto;
+  background-color: #b2c1c1;
+
+}
+
+@media only screen and (max-width: 668px) {
+  .home-polls{
+    height: 800px;
+    width: auto;
+  }
+}
+
+@media only screen and (max-width: 500px) {
+  .home-polls{
+    height: 525px;
+    width: auto;
+  }
+}
+
+.row{
+  text-align: center;
+  padding-top: 30px;
+  padding-left: 15%;
+  padding-right: 15%;
+}
+
+.home-polls a{
+  cursor: pointer;
+  color: black;
+}
+
+.footer{
+  text-align: center;
+  height: 80px;
+  width: 100%;
+  color: white;
+  background-color: #101e2d;
+}

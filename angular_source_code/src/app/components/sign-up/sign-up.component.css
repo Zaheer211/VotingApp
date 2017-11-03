@@ -1,0 +1,24 @@
+
+.btn{
+  margin-top: 10px;
+}
+
+.navbar{
+  margin-bottom: 0;
+  padding-bottom: 0;
+  border-radius: 0;
+  background-color: #101e2d;
+}
+
+.jumbotron{
+  background-color: #b2c1c1;
+  /*font-family: 'Playball', cursive;*/
+  border-radius: 0px;
+}
+
+.well{
+  background-color: #b2c1c1;
+  /*font-family: 'Playball', cursive;*/
+  border-radius: 0px;
+  border-color: #b2c1c1;
+}

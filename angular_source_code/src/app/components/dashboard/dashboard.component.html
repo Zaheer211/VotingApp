@@ -1,0 +1,34 @@
+<nav class="navbar navbar-inverse">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <a style="font-family: 'Playball', cursive;" class="navbar-brand" routerLink=''>Voting</a>
+    </div>
+
+    <div >
+      <ul class="nav navbar-nav navbar-right">
+        <li><a routerLink=''>Home</a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
+<div class="jumbotron">
+  <h2 class="text-center">Below are polls you own!!</h2>
+  <div *ngIf="pollsByUser.length === 0">
+    <h4>You don't have any polls yet!</h4>
+    <button class="btn btn-primary" routerLink = '/create-poll/{{this.userId}}'>Lets create a poll</button>
+  </div>
+  <ul class="list-group" *ngFor="let poll of pollsByUser">
+    <li class="list-group-item">
+      {{poll.title}}
+      <button class="pull-right btn btn-xs btn-danger" (click)=deleteAPoll(poll) >
+        Delete
+      </button>
+      <button routerLink='/polls/{{poll._id}}' class="pull-right btn btn-xs btn-success" style="margin-right: 10px;" >
+        See Details
+      </button>
+    </li>
+  </ul>
+  <div *ngIf="pollsByUser.length > 0">
+    <button class="btn btn-success" routerLink = '/create-poll/{{this.userId}}'>Create Another Poll</button>
+  </div>
+</div>

@@ -1,0 +1,29 @@
+<nav class="navbar navbar-inverse">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <a style="font-family: 'Playball', cursive;" class="navbar-brand" routerLink=''>Voting</a>
+    </div>
+
+    <div>
+      <ul class="nav navbar-nav navbar-right">
+        <li><a routerLink=''>Home</a></li>
+        <li><a routerLink='/dashboard/{{this.userId}}'>Dashboard</a></li>
+        <li><a (click)="logout()" style="cursor: pointer">Logout</a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
+<div class="jumbotron">
+  <form class="form" #createPollForm="ngForm" (ngSubmit)="createPoll(createPollForm)">
+    <label for="title">Title: </label>
+    <input type="text" name="title" class="form-control" placeholder="Title for your poll" ngModel>
+    <label for="type">Type: </label>
+    <input type="text" name="type" class="form-control" placeholder="Type of Graph, must be one of these [bar, pie, doughnut]" ngModel>
+    <label for="label">Label: </label>
+    <input type="text" name="label" class="form-control" placeholder="Type a label for your values like votes or something else" ngModel>
+    <label for="labels">Labels: </label>
+    <input type="text" name="labels" class="form-control" placeholder="Provide comma separated list of labels" ngModel><br><br>
+    <input type="submit" class="btn btn-primary" value="Create Poll">
+    <input routerLink='/dashboard/{{this.userId}}' type="submit" class="btn btn-danger" value="Cancel">
+  </form>
+</div>

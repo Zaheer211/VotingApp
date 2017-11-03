@@ -1,0 +1,34 @@
+<!-- <div class="container"> -->
+  <nav class="navbar navbar-inverse">
+    <div class="container-fluid">
+      <div class="navbar-header">
+        <a style="font-family: 'Playball', cursive;" class="navbar-brand" routerLink=''>Voting</a>
+      </div>
+
+      <div>
+        <ul class="nav navbar-nav navbar-right">
+          <li><a routerLink=''>Home</a></li>
+          <li *ngIf="this.userService.loggedIn()"> <a routerLink='/dashboard/{{this.userId}}'>Dashboard</a></li>
+          <li *ngIf="!this.userService.loggedIn()"><a routerLink='/sign-in'>SignIn</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+  <div class="well">
+    <div style="margin-top: 50px;" class="row">
+      <div *ngIf="this.poll" class="col-sm-4">
+        <h2 style="font-family: 'Playball', cursive;">{{this.poll.poll.title}} </h2>
+        <h5>I would like to vote for...</h5>
+        <select class="form-control" #selectedOption>
+          <option *ngFor="let label of this.poll.poll.labels">{{label.label}}</option>
+        </select>
+        <button type="button" (click)="submitVote(selectedOption.value)" class="submitBtn btn btn-primary">Submit</button>
+      </div>
+      <div class="col-sm-7 col-sm-offset-1">
+        <canvas id="myChart" width="50" height="50"></canvas>
+      </div>
+    </div>
+    <button class="share btn btn-success" shareButton="facebook"><i class="fa fa-facebook"></i> Share this poll</button><br>
+    <button class="share btn btn-success" shareButton="twitter"><i class="fa fa-twitter"></i>  Share this poll</button>
+  </div>
+<!-- </div> -->

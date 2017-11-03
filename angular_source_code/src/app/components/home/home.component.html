@@ -1,0 +1,77 @@
+
+<!-- <div class="container"> -->
+  <nav class="navbar navbar-inverse">
+    <div class="container-fluid">
+      <div class="navbar-header" style="font-family: 'Playball', cursive;">
+        <a class="navbar-brand" routerLink=''>Voting</a>
+      </div>
+
+      <div id="navbar">
+        <ul class="nav navbar-nav navbar-right">
+          <!-- <li><a routerLink=''>Home</a></li> -->
+          <li *ngIf="!this.userService.loggedIn()"> <a routerLink='/sign-in'>SignIn</a></li>
+          <li *ngIf="this.userService.loggedIn()"> <a routerLink='/dashboard/{{this.userId}}'>Dashboard</a></li>
+          <li *ngIf="this.userService.loggedIn()"> <a (click)="logout()">Logout</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+  <div class="home-brand">
+    <div class="home-brand-details">
+      <h1 style="font-size: 70px;">Voting</h1>
+      <h2>Build your custom live poll!</h2>
+      <button (click)="createPoll()" style="font-family: sans-serif;" class="btn btn-success btn-lg">Create Poll</button>
+    </div>
+  </div>
+  <div class="home-description">
+    <div class="row">
+      <div class="col-xs-4">
+        <i style="font-size: 65px;" class="fa fa-globe" aria-hidden="true"></i>
+        <h2>Access</h2>
+        <p>You can access your poll from all around the world!</p>
+      </div>
+      <div class="col-xs-4">
+        <i style="font-size: 65px;" class="fa fa-share-alt" aria-hidden="true"></i>
+        <h2>Share</h2>
+        <p>Share your poll to a social Network and get opinion from your community!</p>
+      </div>
+      <div class="col-xs-4">
+        <i style="font-size: 65px;" class="fa fa-pie-chart" aria-hidden="true"></i>
+        <h2>Customize</h2>
+        <p>Select from various types of graph i.e Pie, Bar, Doughnut etc!</p>
+      </div>
+    </div>
+  </div>
+  <div  class="text-center home-polls">
+    <div style="padding-top: 10px;" class="">
+      <h1 style="font-family: 'Playball', cursive;">Most Recent Polls</h1>
+    </div>
+    <div  class="row text-center">
+      <div class="col-sm-4 col-xs-6">
+        <div class="poll1" id="poll-1">
+          <canvas id="myChart1" width="15" height="15"></canvas>
+          <h5 *ngIf="this.threePolls"><strong><a routerLink='/polls/{{this.threePolls[0]._id}}'>{{this.threePolls[0].title}}</a></strong></h5>
+        </div>
+      </div>
+      <div class="col-sm-4 col-xs-6">
+        <div class="poll2" id="poll-2">
+          <canvas id="myChart2" width="15" height="15"></canvas>
+          <h5 *ngIf="this.threePolls"><strong><a routerLink='/polls/{{this.threePolls[1]._id}}'>{{this.threePolls[1].title}}</a></strong></h5>
+        </div>
+      </div>
+      <div class="col-sm-4 col-xs-6">
+        <div class="poll3" id="poll-3">
+          <canvas id="myChart3" width="15" height="15"></canvas>
+          <h5 *ngIf="this.threePolls"><strong><a routerLink='/polls/{{this.threePolls[2]._id}}'>{{this.threePolls[2].title}}</a></strong></h5>
+        </div>
+      </div>
+    </div>
+      <h3 style="font-family: 'Playball', cursive;"><a routerLink='/showAllPolls'><strong>Check out all polls by Voting.</strong></a></h3>
+  </div>
+  <footer class="footer">
+    <div style="padding-top: 2.5%;" class="container">
+      <span class="text-muted"> Voting <i class="fa fa-copyright" aria-hidden="true"></i>
+        All Rights reserved</span>
+    </div>
+  </footer>
+<!-- </div> -->
